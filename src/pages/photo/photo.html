@@ -1,0 +1,57 @@
+<ion-header>
+
+<ion-toolbar no-border-top color=mainc>
+    <ion-segment [(ngModel)]="photo_ablum">
+      <ion-segment-button value="photo">
+        Photo
+      </ion-segment-button>
+      <ion-segment-button value="album">
+        Album
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div [ngSwitch]="photo_album">
+    <div *ngSwitchCase="'photo'">
+
+        <ion-fab right bottom>
+    <button ion-fab color="mainc" icon-only ></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="image"></ion-icon></button>
+      <button ion-fab (click)='takePhoto()'><ion-icon name="camera"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+      <!--<button ion-button full (click)='takePhoto()'>takePhoto</button>-->
+
+      <ion-list>
+       <ion-item ion-item *ngFor="let image of imageshow">
+        <ion-card>
+          <ion-item-sliding #item>
+            <ion-item>
+              <img [src]="image.img"/>
+              <div class="card-title">{{image.photo}}</div>
+              <div class="card-subtitle">{{image.time | date:'yy/MM/dd HH:ss'}}</div>
+            </ion-item>
+            <ion-item-options side="left">
+              <button ion-button color="danger" (click)="remove(image)" >remove</button>
+            </ion-item-options>
+            <ion-item-options side ="right">
+              <button ion-button (click)="share(image)">share</button>
+            </ion-item-options>
+          </ion-item-sliding>
+          </ion-card>
+        </ion-item>   
+      </ion-list>
+
+    </div>
+    
+    <div *ngSwitchCase="'album'">
+      <p>album</p>
+      <button>gsef</button>
+      
+    </div>
+  </div>
+</ion-content>

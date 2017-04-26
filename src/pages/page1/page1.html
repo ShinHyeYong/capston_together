@@ -1,0 +1,27 @@
+<ion-header>
+  <!--
+  <ion-navbar color=mainc>
+    <button ion-button mainc menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Together</ion-title>
+  </ion-navbar>
+  -->
+  <!-- <h3>Current Latitude: {{locationTracker.lat}}</h3>
+  <h3>Current Longitude: {{locationTracker.lng}}</h3>
+  <button ion-button full primary (click)="start()">Start Tracking</button>
+  <button ion-button full primary (click)="stop()">Stop Tracking</button> -->
+</ion-header>
+
+<ion-content>
+  <ion-tabs color="mainc">
+    <ion-tab [root]="tab1Root" tabTitle="Home"   tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Photo"  tabIcon="image"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Map"    tabIcon="navigate"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="about"  tabIcon="apps"></ion-tab>
+  </ion-tabs>
+
+  <!-- <button ion-button secondary menuToggle>
+    <ion-icon name="menu"> Menu 보기</ion-icon>
+  </button> -->
+</ion-content>

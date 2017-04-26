@@ -1,0 +1,36 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color=mainc>
+      <div style="padding:15px; 
+                  background-position:20px 30px; 
+                  background-size:60px; 
+                  text-align:center; 
+                  background-repeat: 
+                  no-repeat; 
+                  height:130px; 
+                  background-image:URL(assets/img/icon-person.PNG);">
+      <span style="color:white;">
+        <pre>
+          이은규
+
+          ㅎㅇㅎㅇㅎㅇ
+          </pre>
+        </span>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <ion-item>
+        <ion-thumbnail item-left menuClose  *ngFor="let p of pages" (click)="openPage(p)">
+          <img src="assets/img/icon-person.PNG">
+        </ion-thumbnail>
+        <h2> Include </h2>
+        <p>hello</p>
+      </ion-item>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
